@@ -46,7 +46,7 @@ const registerControllers = (app) => {
             })
 
         } catch (err) {
-            console.log(err.message)
+            console.log('\n\n' + err.message)
             console.error('Houve um erro ao registrar o controller:' + file)
         }
     })

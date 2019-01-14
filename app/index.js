@@ -37,10 +37,4 @@ registerControllers(app)
 
 // Sobe o servidor na porta 3000
 // TODO: parametrizar a porta e normalizar
-app.listen(3000, (err) => {
-    if (err) {
-        console.log(err)
-        return
-    }
-    console.log('App running on http://localhost:3000')
-})
+module.exports = app

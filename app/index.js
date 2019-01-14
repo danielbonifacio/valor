@@ -1,18 +1,17 @@
 'use strict'
 
+global.Controller = require('../core/base/classes/controller.class')
+
 const express = require('express')
 const bodyParser = require('body-parser')
+const registerControllers = require('../core/helpers/registerControllers')
 
 const app = express()
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-const teste = require('./controllers/teste')
-
-console.log(teste)
-
-app.get(teste.route, teste.methods.sayHello)
+registerControllers(app)
 
 app.listen(3000, (err) => {
     if (err) {

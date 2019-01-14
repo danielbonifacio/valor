@@ -1,9 +1,9 @@
-const Teste = new Controller('get', '/teste/endpoint', (req, res) => {
+const Teste = new Controller('get', '/teste', (req, res) => {
     console.log('chegou')
     res
         .status(200)
         .send({
-            message: 'Olá, Mundo!'
+            message: 'Olá, jdashda!'
         })
 })
 

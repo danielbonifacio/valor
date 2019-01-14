@@ -1,8 +1,10 @@
 class Controller {
-    constructor(verb, route, method) {
-        this.route = route
-        this.verb = verb
-        this.method = method
+    constructor(controller) {
+        this.route = controller.route
+        this.get = controller.get || false
+        this.post = controller.post || false
+        this.delete = controller.delete || false
+        this.put = controller.put || false
     }
 }
 

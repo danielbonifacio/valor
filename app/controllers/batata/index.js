@@ -5,6 +5,11 @@ const Batata = new Controller({
         const batatas = require('Models/batata')
         res.send({ batatas })
     },
+    post(req, res) {
+        res.send({
+            post: req.body
+        })
+    }
 })
 
 module.exports = Batata

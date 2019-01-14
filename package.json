@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "prod": "node app/index",
+    "dev": "nodemon app/index -e js,ts"
   },
   "repository": {
     "type": "git",
@@ -31,5 +31,8 @@
     "Middlewares": "./app/middlewares",
     "Models": "./app/models",
     "Services": "./app/services"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
   }
 }

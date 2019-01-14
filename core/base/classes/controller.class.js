@@ -5,6 +5,7 @@ class Controller {
         this.post = controller.post || false
         this.delete = controller.delete || false
         this.put = controller.put || false
+        this.middlewares = controller.middlewares || []
     }
 }
 

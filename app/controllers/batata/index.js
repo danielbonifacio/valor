@@ -1,5 +1,12 @@
 const Batata = new Controller({
     route: '/batatas/:id?',
+    
+    middlewares: {
+        'get': [
+            require('Middlewares/block')
+        ],
+    },
+
     get(req, res) {
         console.log("chegou pelo id: " + req.params.id)
         const batatas = require('Models/batata')

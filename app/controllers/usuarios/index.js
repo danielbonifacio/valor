@@ -4,21 +4,25 @@ const requestManager = require('Helpers/requestManager')
 const Batata = new Controller({
     route: '/',
 
-    /**
-     * Recupera todos os usuário cadastrados no banco
-     * @param {object} req requisição
-     * @param {object} res resposta
-     */
-    get(req, res) {
-        const exc = requestManager.getExcludes(req)
-        users.findAll({
-                attributes: exc
-            })
-            .then(users => {
-                res.send({ users }) 
-            })
-            .catch(err => console.log(err))
-    },
+    get: [
+        {
+            endpoint: 'todos/:id',
+            middlewares: [
+                require('Middlewares/block')
+            ],
+            /**
+             * Recupera todos os usuário cadastrados no banco
+             * @param {object} req requisição
+             * @param {object} res resposta
+             */
+            run(req, res) {
+                users
+                    .findAll({ attributes: { exclude: ['id', 'nome'] } })
+                    .then(users => res.send({ users }))
+                    .catch(err => res.send({ error }))
+            }
+        }
+    ],
 
     /**
      * Cadastra um novo usuário e retora a lista atualizada

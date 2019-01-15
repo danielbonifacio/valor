@@ -9,10 +9,6 @@ class Controller {
         this.delete = controller.delete || false
         this.put = controller.put || false
     }
-
-    services(name) {
-        return this.services[name]
-    }
 }
 
 module.exports = Controller

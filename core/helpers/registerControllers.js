@@ -41,6 +41,19 @@ const registerControllers = (app) => {
                         middlewares.push(...controller.middlewares['*'])                    
                     }
 
+                    if (typeof controller[key] === 'object') {
+                        controller[key].map(ctr => {
+                            if (ctr.middlewares) {
+                                middlewares.push(...ctr.middlewares)
+                            }
+
+                            newRoute = route + `${ctr.endpoint}`.replace(/\/\//gi, '/')
+
+                            app[key](newRoute, ...middlewares, ctr.run)
+                        })
+                        return
+                    }
+
                     app[key](route, ...middlewares, controller[key])
                 }
             })

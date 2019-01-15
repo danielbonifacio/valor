@@ -17,9 +17,9 @@ const Batata = new Controller({
              */
             run(req, res) {
                 users
-                    .findAll({ attributes: { exclude: ['id', 'nome'] } })
+                    .findAll({ attributes: ['id', 'nome'] })
                     .then(users => res.send({ users }))
-                    .catch(err => res.send({ error }))
+                    .catch(error => res.send({ error }))
             }
         }
     ],

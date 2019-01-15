@@ -28,6 +28,28 @@ npm run dev
 ```
 
 
+## GIT
+
+Quando for subir uma nova feature ou correção, não se esqueça de subir em um novo branch:
+
+``` bash
+# baixa a ultima versão do projeto
+# CARA FAZ ISSO SÉRIO VC VAI EVITAR MT MERDA
+git pull origin master
+
+# cria um novo branch
+git checkout -b nome-do-branch
+
+# adiciona e commita as mudanças
+git add . && git commit -m "fiz isso e isso e isso"
+
+# sobe para o github com um novo branch
+git push origin nome-do-branch
+
+# volta para o master e apaga o branch que você criou
+git checkout master && git branch -d nome-do-branch
+```
+
 # Desenvolvimento
 
 Futuramente um linting será adicionado e, bem possivelmente, será com base na [style guide do AirBnb](https://github.com/airbnb/javascript).

@@ -1,3 +1,5 @@
+require('dotenv-safe').load()
+
 const app = require('./app')
 const con = require('Config')
 

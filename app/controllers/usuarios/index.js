@@ -6,10 +6,7 @@ const Batata = new Controller({
 
     get: [
         {
-            endpoint: 'todos/:id',
-            middlewares: [
-                require('Middlewares/block')
-            ],
+            endpoint: 'todos',
             /**
              * Recupera todos os usuário cadastrados no banco
              * @param {object} req requisição

@@ -2,12 +2,12 @@
  * hpnode
  * @author: Daniel Bonifacio <danielbonifacio@outlook.com>
  */
-'use strict'
+
 
 /**
  * Registra os alias para importação
  * Alias são meio que namespaces
- * 
+ *
  * Isso tem que vir antes de qualquer require!
  */
 require('module-alias/register')

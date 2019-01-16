@@ -1,11 +1,12 @@
-const sql = require('sequelize')
+const Sequelize = require('sequelize')
 const con = require('Config')
-const Op = sql.Op;
+
+const { Op } = Sequelize
 
 const { db } = con
 
-module.exports = new sql(db.name, db.user, db.pass, {
-    host: db.host,
-    dialect: db.driver,
-    operatorsAliases: Op,
+module.exports = new Sequelize(db.name, db.user, db.pass, {
+  host: db.host,
+  dialect: db.driver,
+  operatorsAliases: Op,
 })

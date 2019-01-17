@@ -78,11 +78,19 @@ const Batata = new Controller({
         })
 
         Users()
-          .update(toUpdate, { where: { id } })
-          .then(() => {
-            Users()
-              .findById(id)
-              .then(usuario => res.send({ usuario }))
+          .update(toUpdate, {
+            where: { id },
+            returning: true,
+            plain: true,
+          })
+          .then((data) => {
+            if (process.env.DB_DRIVER === 'postgres') {
+              res.send({ usuario: data[1] })
+            } else {
+              Users()
+                .findById(id)
+                .then(usuario => res.send({ usuario }))
+            }
           })
           .catch(error => res.send({ error }))
       },

@@ -1,0 +1,9 @@
+require('dotenv-safe').load()
+const path = require('path');
+
+module.exports = {
+  'config': path.resolve('core/config', 'database.js'),
+  'models-path': path.resolve('app/models'),
+  'migrations-path': path.resolve('app/database/migrations'),
+  'seeders-path': path.resolve('app/database/seeders')
+}

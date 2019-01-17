@@ -1,21 +1,23 @@
-const sql = require('sequelize')
-const db = require('Services/database')
+const Sequelize = require('sequelize')
+const DataBase = require('Services/database')
 
-const User = db.define('user', {
-  id: {
-    type: sql.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-  },
-  nome: {
-    type: sql.STRING,
-    unique: true,
-  },
-  email: {
-    type: sql.STRING,
-    unique: true,
-    select: false,
-  },
-})
+/**
+ * User model
+ * ----------
+ * @param data database service
+ * @param seql sequelize instance
+ */
+module.exports = (data, seql) => {
+  const database = data || DataBase
+  const sequelize = seql || Sequelize
 
-module.exports = User
+  const User = database.define('User', {
+    nome: sequelize.STRING,
+    email: sequelize.STRING,
+    telefone: sequelize.STRING,
+  }, {
+
+  })
+
+  return User
+}

@@ -7,7 +7,9 @@
     "prod": "node server",
     "dev": "nodemon server -e js,ts",
     "lint:fix:core": "eslint --fix --ext .js core",
-    "lint:fix": "eslint --fix --ext .js app"
+    "lint:fix": "eslint --fix --ext .js app",
+    "migrate": "sequelize db:migrate",
+    "migrate:undo": "sequelize db:migrate:undo"
   },
   "repository": {
     "type": "git",

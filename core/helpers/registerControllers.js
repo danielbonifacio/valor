@@ -28,12 +28,12 @@ const registerControllers = (app) => {
 
 
       /**
-         * é aqui que a magia negra acontece
-         * esse cara registra os controllers e os middlewares
-         * da forma mais performática possível
-         *
-         * não futuca se não tiver estrita necessidade
-         */
+       * é aqui que a magia negra acontece
+       * esse cara registra os controllers e os middlewares
+       * da forma mais performática possível
+       *
+       * não futuca se não tiver estrita necessidade
+       */
       Object.keys(controller).map((key) => {
         if ((key === 'post' || key === 'get' || key === 'put' || key === 'delete') && controller[key] !== false) {
           const middlewares = []

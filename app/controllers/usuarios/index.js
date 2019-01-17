@@ -12,7 +12,7 @@ const Batata = new Controller({
        * @param {object} res resposta
        */
       run(req, res) {
-        users
+        users()
           .findAll({ attributes: ['id', 'nome'] })
           .then(usersFromDb => res.send({ users: usersFromDb }))
           .catch(error => res.send({ error }))

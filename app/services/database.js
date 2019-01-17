@@ -5,8 +5,8 @@ const { Op } = Sequelize
 
 const { db } = con
 
-module.exports = new Sequelize(db.name, db.user, db.pass, {
+module.exports = new Sequelize(db.database, db.username, db.password, {
   host: db.host,
-  dialect: db.driver,
+  dialect: db.dialect,
   operatorsAliases: Op,
 })

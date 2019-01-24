@@ -1,6 +1,6 @@
 {
-  "name": "hpnode",
-  "version": "1.0.0",
+  "name": "valor",
+  "version": "0.0.2",
   "description": "",
   "main": "server.js",
   "scripts": {

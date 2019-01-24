@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hpnode</title>
+  <style>
+    .boxes {
+      display: flex;
+      max-width: 780px;
+      justify-content: center;
+      margin: 50px auto;
+    }
+
+    .box {
+      width: 33.3333%;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 0 10px;
+      cursor: default;
+      transition: .25s ease;
+    }
+
+    .box:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,.2);
+      transform: translateY(-3px);
+    }
+
+    .cover.show{
+      background: linear-gradient(to bottom, #d9d9d9 0%,#ffffff 100%)!important;
+    }
+
+    section.cover .cover-main>p:last-child a {
+      transition: .25s ease;
+    }
+
+    section.cover .cover-main>p:last-child a:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0, .2);
+      transform: translateY(-3px);
+      color: #D33831!important;
+    }
+
+    section.cover .cover-main>p:last-child a:last-child:hover {
+      color: #ffffff!important;
+      background: #D33831!important;
+    }
+
+    .markdown-section {
+      margin: 0!important;
+    }
+  </style>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'hpnode',
+      repo: 'https://github.com/danielbonifacio/hpnode',
+      coverpage  : 'coverpage.md',
+      themeColor: '#D33831',
+      loadSidebar: true,
+      subMaxLevel: 3,
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+</body>
+</html>
